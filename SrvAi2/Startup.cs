@@ -10,13 +10,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+
 using LibA;
 using Microsoft.Extensions.Hosting;
-using SrvA.HostedServices;
-using SrvA.Config;
+using SrvAi2.HostedServices;
+using SrvAi2.Config;
 using Consul;
 
-namespace SrvA
+namespace SrvAi2
 {
     public class Startup
     {

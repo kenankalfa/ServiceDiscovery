@@ -10,13 +10,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using LibA;
-using Microsoft.Extensions.Hosting;
-using SrvA.HostedServices;
-using SrvA.Config;
+
+using LibB;
+using SrvB.HostedServices;
+using SrvB.Config;
 using Consul;
 
-namespace SrvA
+namespace SrvB
 {
     public class Startup
     {
@@ -30,7 +30,7 @@ namespace SrvA
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<ILibA, LibA.LibA>();
+            services.AddTransient<ILibB, LibB.LibB>();
             services.Configure<ConsulConfig>(Configuration.GetSection("ConsulConfig"));
             services.AddSingleton<IConsulClient, ConsulClient>(p => new ConsulClient(consulConfig =>
             {
@@ -44,7 +44,7 @@ namespace SrvA
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {

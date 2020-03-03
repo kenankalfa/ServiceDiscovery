@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Consul;
+using LibConsulClient;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,13 +12,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using LibA;
-using Microsoft.Extensions.Hosting;
-using SrvA.HostedServices;
-using SrvA.Config;
-using Consul;
 
-namespace SrvA
+namespace SrvMain
 {
     public class Startup
     {
@@ -30,21 +27,18 @@ namespace SrvA
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<ILibA, LibA.LibA>();
-            services.Configure<ConsulConfig>(Configuration.GetSection("ConsulConfig"));
+            services.AddTransient<IConsulWrapper, ConsulWrapper>();
             services.AddSingleton<IConsulClient, ConsulClient>(p => new ConsulClient(consulConfig =>
             {
                 var address = Configuration["ConsulConfig:ConsulClientAddress"];
                 consulConfig.Address = new Uri(address);
             }));
 
-            services.AddHostedService<ConsulRegisterHostedService>();
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {

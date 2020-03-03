@@ -6,13 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Consul" Version="0.7.2.6" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LibA\LibA.csproj" />
+    <ProjectReference Include="..\LibB\LibB.csproj" />
     <ProjectReference Include="..\LibConsulClient\LibConsulClient.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
