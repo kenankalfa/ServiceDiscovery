@@ -1,0 +1,7 @@
+docker run --name redis1 -p 6379:6379 -d redis
+
+docker run -d --name=c1 -p 8500:8500 consul agent -dev -client=0.0.0.0 -bind=0.0.0.0
+docker run -d --name c2 consul agent -dev -bind=0.0.0.0 -join=172.17.0.3
+docker run -d --name c3 consul agent -dev -bind=0.0.0.0 -join=172.17.0.3
+
+consul catalog nodes

@@ -40,7 +40,7 @@ namespace SrvMain.Controllers
 
             response = await Policy
                                 .HandleResult<IRestResponse>(message => !message.IsSuccessful)
-                                .WaitAndRetryAsync(3, i => TimeSpan.FromSeconds(2), async (result, timeSpan, retryCount, context) =>
+                                .WaitAndRetryAsync(3, i => TimeSpan.FromMilliseconds(100), async (result, timeSpan, retryCount, context) =>
                                 {
                                     baseUrl = await _consulWrapper.GetUrl(tag, baseUrl);
                                     restClient.BaseUrl = new Uri(baseUrl);
@@ -68,7 +68,7 @@ namespace SrvMain.Controllers
 
             response = await Policy
                                 .HandleResult<IRestResponse>(message => !message.IsSuccessful)
-                                .WaitAndRetryAsync(3, i => TimeSpan.FromSeconds(2), async (result, timeSpan, retryCount, context) =>
+                                .WaitAndRetryAsync(3, i => TimeSpan.FromMilliseconds(100), async (result, timeSpan, retryCount, context) =>
                                 {
                                     baseUrl = await _consulWrapper.GetUrl(tag, baseUrl);
                                     restClient.BaseUrl = new Uri(baseUrl);
@@ -96,7 +96,7 @@ namespace SrvMain.Controllers
 
             response = await Policy
                                 .HandleResult<IRestResponse>(message => !message.IsSuccessful)
-                                .WaitAndRetryAsync(3, i => TimeSpan.FromSeconds(2), async (result, timeSpan, retryCount, context) =>
+                                .WaitAndRetryAsync(3, i => TimeSpan.FromMilliseconds(100), async (result, timeSpan, retryCount, context) =>
                                 {
                                     baseUrl = await _consulWrapper.GetUrl(tag, baseUrl);
                                     restClient.BaseUrl = new Uri(baseUrl);
@@ -124,7 +124,7 @@ namespace SrvMain.Controllers
 
             response = await Policy
                                 .HandleResult<IRestResponse>(message => !message.IsSuccessful)
-                                .WaitAndRetryAsync(3, i => TimeSpan.FromSeconds(2), async (result, timeSpan, retryCount, context) =>
+                                .WaitAndRetryAsync(3, i => TimeSpan.FromMilliseconds(100), async (result, timeSpan, retryCount, context) =>
                                 {
                                     baseUrl = await _consulWrapper.GetUrl(tag, baseUrl);
                                     restClient.BaseUrl = new Uri(baseUrl);

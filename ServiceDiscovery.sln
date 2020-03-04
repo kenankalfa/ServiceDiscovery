@@ -3,23 +3,28 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1022
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SrvA", "SrvA\SrvA.csproj", "{0799A4D1-55C6-46A0-8F52-383F53F22111}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SrvA", "SrvA\SrvA.csproj", "{0799A4D1-55C6-46A0-8F52-383F53F22111}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SrvAi2", "SrvAi2\SrvAi2.csproj", "{CDAFA38E-B99E-4867-89F5-C42BA0A0AD9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SrvAi2", "SrvAi2\SrvAi2.csproj", "{CDAFA38E-B99E-4867-89F5-C42BA0A0AD9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SrvB", "SrvB\SrvB.csproj", "{B21C2D6D-ECDE-49A7-81F7-F10009C4404D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SrvB", "SrvB\SrvB.csproj", "{B21C2D6D-ECDE-49A7-81F7-F10009C4404D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibA", "LibA\LibA.csproj", "{06AA2EAA-6E6B-4D40-887F-35FEFE35A1D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibA", "LibA\LibA.csproj", "{06AA2EAA-6E6B-4D40-887F-35FEFE35A1D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibB", "LibB\LibB.csproj", "{A9CE2101-1C6E-46A1-A400-E934392B18B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibB", "LibB\LibB.csproj", "{A9CE2101-1C6E-46A1-A400-E934392B18B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibConsulClient", "LibConsulClient\LibConsulClient.csproj", "{690A36E6-E7B0-4352-8B9D-23B8D7DD4113}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibConsulClient", "LibConsulClient\LibConsulClient.csproj", "{690A36E6-E7B0-4352-8B9D-23B8D7DD4113}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibRedis", "LibRedis\LibRedis.csproj", "{B13A6E83-0FD9-4DEA-A831-ABDF1E038A13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibRedis", "LibRedis\LibRedis.csproj", "{B13A6E83-0FD9-4DEA-A831-ABDF1E038A13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{C96CA790-AB6F-4DA1-9699-F3D49B10F655}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{C96CA790-AB6F-4DA1-9699-F3D49B10F655}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SrvMain", "SrvMain\SrvMain.csproj", "{6060DB62-2BF9-4315-A2D8-550F12182697}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SrvMain", "SrvMain\SrvMain.csproj", "{6060DB62-2BF9-4315-A2D8-550F12182697}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{62BB957E-3FBD-4DBB-B19A-8722F0C66959}"
+	ProjectSection(SolutionItems) = preProject
+		Cmd.txt = Cmd.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

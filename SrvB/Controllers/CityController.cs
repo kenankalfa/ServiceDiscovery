@@ -24,6 +24,20 @@ namespace SrvB.Controllers
         [HttpGet("ById/{id}")]
         public Response<LibBModel> GetById(int id)
         {
+            #region exceptional code
+            if (id > 1)
+            {
+                Random random = new Random();
+
+                var next = random.Next(10000, 100000);
+
+                if (next % 3 == 0)
+                {
+                    throw new Exception("good-bad-ugly");
+                }
+            } 
+            #endregion
+
             Response<LibBModel> response = new Response<LibBModel>();
 
             response.Result = _dataSource.GetById(id);
@@ -35,6 +49,20 @@ namespace SrvB.Controllers
         [HttpGet("Paged/{pageSize}/{pageNumber}")]
         public Response<List<LibBModel>> Paged(int pageSize, int pageNumber)
         {
+            #region exceptional code
+            if (pageSize > 1)
+            {
+                Random random = new Random();
+
+                var next = random.Next(10000, 100000);
+
+                if (next % 3 == 0)
+                {
+                    throw new Exception("good-bad-ugly");
+                }
+            } 
+            #endregion
+
             Response<List<LibBModel>> response = new Response<List<LibBModel>>();
 
             response.Result = _dataSource.Paged(pageSize, pageNumber);

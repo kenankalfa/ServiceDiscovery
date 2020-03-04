@@ -20,6 +20,7 @@ namespace SrvAi2.Controllers
         [HttpGet("ById/{id}")]
         public Response<LibAModel> GetById(int id)
         {
+            #region exceptional code
             if (id > 1)
             {
                 Random random = new Random();
@@ -30,7 +31,8 @@ namespace SrvAi2.Controllers
                 {
                     throw new Exception("good-bad-ugly");
                 }
-            }
+            } 
+            #endregion
 
             Response<LibAModel> response = new Response<LibAModel>();
 
@@ -43,6 +45,20 @@ namespace SrvAi2.Controllers
         [HttpGet("Paged/{pageSize}/{pageNumber}")]
         public Response<List<LibAModel>> Paged(int pageSize, int pageNumber)
         {
+            #region exceptional code
+            if (pageSize > 1)
+            {
+                Random random = new Random();
+
+                var next = random.Next(10000, 100000);
+
+                if (next % 3 == 0)
+                {
+                    throw new Exception("good-bad-ugly");
+                }
+            } 
+            #endregion
+
             Response<List<LibAModel>> response = new Response<List<LibAModel>>();
 
             response.Result = _dataSource.Paged(pageSize, pageNumber);
